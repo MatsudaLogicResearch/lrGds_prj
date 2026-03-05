@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lrGds_tools"
+version = "2.0.0"
+description = "GDS tools."
+authors = [{ name = "LogicResearch K.K.(MATSUDA Masahiro)", email = "matsuda@logic-research.co.jp" }]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["gdstk", "pandas"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["lrGds_tools","lrGds_tools.*"]
+
+#[tool.setuptools.package-data]
+#"pya_tools.config.pya_gds2lef" = ["*"]
+##"pya_tools.config.pya_flatspice" = ["*"]
+
+[project.scripts]
+lrGds_tools = "lrGds_tools.scripts.runner:main"
